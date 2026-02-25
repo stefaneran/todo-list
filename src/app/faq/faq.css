@@ -1,0 +1,45 @@
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px var(--card-shadow);
+  width: 100%;
+  max-width: 640px;
+  padding: 32px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-item {
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--item-hover);
+  border-left: 4px solid var(--primary);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.faq-item h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}

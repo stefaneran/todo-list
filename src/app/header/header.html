@@ -1,0 +1,34 @@
+<header class="app-header">
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ lang.t().navHome }}</a>
+    <a routerLink="/faq" routerLinkActive="active">{{ lang.t().navFaq }}</a>
+    <a routerLink="/settings" routerLinkActive="active">{{ lang.t().navSettings }}</a>
+  </nav>
+
+  <div class="lang-picker">
+    <div class="dropdown">
+      <button class="dropdown-toggle" (click)="toggleDropdown()" type="button">
+        <span [class]="'fi fi-' + current.flag"></span>
+        <span>{{ current.label }}</span>
+        <span class="chevron" [class.open]="isOpen()">▾</span>
+      </button>
+
+      @if (isOpen()) {
+        <ul class="dropdown-menu">
+          @for (option of languages; track option.code) {
+            <li>
+              <button
+                type="button"
+                [class.selected]="option.code === lang.language()"
+                (click)="selectLanguage(option.code)"
+              >
+                <span [class]="'fi fi-' + option.flag"></span>
+                <span>{{ option.label }}</span>
+              </button>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</header>

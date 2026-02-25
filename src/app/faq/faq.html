@@ -1,0 +1,12 @@
+<div class="card">
+  <h1>{{ lang.t().faqTitle }}</h1>
+
+  <div class="faq-list">
+    @for (item of lang.t().faqItems; track item.question) {
+      <div class="faq-item">
+        <h2>{{ item.question }}</h2>
+        <p>{{ item.answer }}</p>
+      </div>
+    }
+  </div>
+</div>

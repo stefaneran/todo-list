@@ -1,0 +1,11 @@
+<div class="card">
+  <h1>{{ lang.t().settingsTitle }}</h1>
+
+  <div class="setting-row">
+    <label for="theme-select">{{ lang.t().themeLabel }}</label>
+    <select id="theme-select" [value]="themeService.theme()" (change)="setTheme($event)">
+      <option value="default">{{ lang.t().themeDefault }}</option>
+      <option value="gothic">{{ lang.t().themeGothic }}</option>
+    </select>
+  </div>
+</div>

@@ -1,3 +1,6 @@
+@import 'flag-icons/css/flag-icons.min.css';
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +8,48 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f0f2f5;
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --primary: #6c63ff;
+  --primary-hover: #574fd6;
+  --primary-subtle: #f4f3ff;
+  --danger: #e05c5c;
+  --danger-hover: #c94a4a;
+  --text: #333333;
+  --text-muted: #888888;
+  --heading: #1a1a2e;
+  --border: #dde1e7;
+  --divider: #f0f2f5;
+  --item-hover: #f7f8fa;
+  --header-bg: #6c63ff;
+  --header-shadow: rgba(108, 99, 255, 0.3);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: var(--font);
+
+  font-family: var(--font);
+  background: var(--bg);
   min-height: 100vh;
+  transition: background 0.3s, color 0.3s, font-family 0.3s;
+}
+
+body.theme-gothic {
+  --bg: #0d0b14;
+  --card-bg: #17121f;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --primary: #8b1a1a;
+  --primary-hover: #6b1010;
+  --primary-subtle: #1f1020;
+  --danger: #8b1a1a;
+  --danger-hover: #6b1010;
+  --text: #c8b8d8;
+  --text-muted: #7a6a8a;
+  --heading: #e8d8f8;
+  --border: #2e2040;
+  --divider: #1e1830;
+  --item-hover: #1e1830;
+  --header-bg: #0a0814;
+  --header-shadow: rgba(0, 0, 0, 0.6);
+  --font: 'IM Fell English', Georgia, serif;
+  --font-heading: 'UnifrakturMaguntia', Georgia, serif;
 }

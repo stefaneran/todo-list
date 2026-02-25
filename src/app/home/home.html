@@ -1,0 +1,45 @@
+<div class="card">
+  <h1>{{ lang.t().title }}</h1>
+
+  <form class="input-row" (ngSubmit)="addTodo()">
+    <input
+      type="text"
+      [(ngModel)]="newTodoText"
+      name="newTodo"
+      [placeholder]="lang.t().placeholder"
+      autocomplete="off"
+    />
+    <button type="submit">{{ lang.t().add }}</button>
+  </form>
+
+  @if (todos().length > 0) {
+    <ul class="todo-list">
+      @for (todo of filteredTodos(); track todo.id) {
+        <li [class.completed]="todo.completed" (click)="toggleTodo(todo.id)">
+          <input
+            type="checkbox"
+            [checked]="todo.completed"
+            (click)="$event.stopPropagation()"
+            (change)="toggleTodo(todo.id)"
+          />
+          <span class="todo-text">{{ todo.text }}</span>
+          <button class="delete-btn" (click)="$event.stopPropagation(); deleteTodo(todo.id)" aria-label="Delete">✕</button>
+        </li>
+      } @empty {
+        <li class="empty">{{ lang.t().empty }}</li>
+      }
+    </ul>
+
+    <div class="footer">
+      <span>{{ lang.t().itemsLeft(remaining()) }}</span>
+
+      <div class="filters">
+        <button [class.active]="filter() === 'all'" (click)="setFilter('all')">{{ lang.t().all }}</button>
+        <button [class.active]="filter() === 'active'" (click)="setFilter('active')">{{ lang.t().active }}</button>
+        <button [class.active]="filter() === 'completed'" (click)="setFilter('completed')">{{ lang.t().completed }}</button>
+      </div>
+
+      <button class="clear-btn" (click)="clearCompleted()">{{ lang.t().clearCompleted }}</button>
+    </div>
+  }
+</div>

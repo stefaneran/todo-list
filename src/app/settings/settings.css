@@ -1,0 +1,50 @@
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px var(--card-shadow);
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.setting-row label {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.setting-row select {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-family: var(--font);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background 0.3s, color 0.3s;
+}
+
+.setting-row select:focus {
+  border-color: var(--primary);
+}

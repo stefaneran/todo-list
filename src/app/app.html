@@ -1,47 +1,4 @@
+<app-header />
 <div class="page">
-  <div class="card">
-    <h1>Todo List</h1>
-
-    <form class="input-row" (ngSubmit)="addTodo()">
-      <input
-        type="text"
-        [(ngModel)]="newTodoText"
-        name="newTodo"
-        placeholder="What needs to be done?"
-        autocomplete="off"
-      />
-      <button type="submit">Add</button>
-    </form>
-
-    @if (todos().length > 0) {
-      <ul class="todo-list">
-        @for (todo of filteredTodos(); track todo.id) {
-          <li [class.completed]="todo.completed" (click)="toggleTodo(todo.id)">
-            <input
-              type="checkbox"
-              [checked]="todo.completed"
-              (click)="$event.stopPropagation()"
-              (change)="toggleTodo(todo.id)"
-            />
-            <span class="todo-text">{{ todo.text }}</span>
-            <button class="delete-btn" (click)="$event.stopPropagation(); deleteTodo(todo.id)" aria-label="Delete">✕</button>
-          </li>
-        } @empty {
-          <li class="empty">No tasks here.</li>
-        }
-      </ul>
-
-      <div class="footer">
-        <span>{{ remaining() }} item{{ remaining() === 1 ? '' : 's' }} left</span>
-
-        <div class="filters">
-          <button [class.active]="filter() === 'all'" (click)="setFilter('all')">All</button>
-          <button [class.active]="filter() === 'active'" (click)="setFilter('active')">Active</button>
-          <button [class.active]="filter() === 'completed'" (click)="setFilter('completed')">Completed</button>
-        </div>
-
-        <button class="clear-btn" (click)="clearCompleted()">Clear completed</button>
-      </div>
-    }
-  </div>
+  <router-outlet />
 </div>
